@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 @DisplayName("Тесты работы с API клиента")
 @Feature("Api for users")
-public class apiTest {
+public class TestApiVK {
 
     private static final String BASE_URI = "https://api.vk.com/method";
 
@@ -52,7 +52,6 @@ public class apiTest {
                 .spec(requestSpec)
                 .post(urlPost);
         String expected = String.format("{\"response\":{\"changed\":1}}");
-        System.out.println(res.asString());
         assertEquals(expected, res.asString(), Helpers.getMethodName());
         assertEquals(200, res.getStatusCode(), Helpers.getMethodName());
     }
